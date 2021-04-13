@@ -30,8 +30,8 @@ class Circular_linked_list{
 		void push();
 		void pop();
 		void pop(int data);
-		void push_after();
-		void push_befor();
+		void push_after(int data);
+		void push_befor(int data);
 		void print();
 
 
