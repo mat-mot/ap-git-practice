@@ -1,20 +1,9 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-class node{
-	private:
-		int data;
-		node* next;
-		node* prev;
-	public:
-		//add getter and setter functions here
-		/*
-
-			here
-
-		*/
-};
-class Circular_linked_list{
+#include <iostream>
+#include "matin.o"
+//#include "ehsan.o"
+using namespace std ;
+class Circular_linked_list
+{
 	private:
 		int size;
 		node* current;
@@ -27,20 +16,15 @@ class Circular_linked_list{
 			here
 
 		*/
-		void push();
-		void pop();
+        void pushf();
+        void popf();
 		void pop(int data);
 		void push_after(int new_data,int pa_data);
 		void push_befor(int new_data,int pb_data);
 		void print();
+};
+int main()
+{
 
-
-}
-
-
-
-int main(){
-
-
-
+    return 0 ;
 }
