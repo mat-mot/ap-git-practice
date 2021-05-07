@@ -1,5 +1,3 @@
-#include <iostream>
-using namespace std;
 //-----------------------------------------------------//writen by matin // https://github.com/mat-mot/ap-git-practice.git //993623038
 class node{
 	private:

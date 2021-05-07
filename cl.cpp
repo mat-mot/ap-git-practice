@@ -1,7 +1,6 @@
 #include <iostream>
-#include "matin.o"
-//#include "ehsan.o"
 using namespace std ;
+#include "node.h"
 class Circular_linked_list
 {
 	private:
@@ -12,9 +11,7 @@ class Circular_linked_list
 		~Circular_linked_list();
 		//add getter and setter functions here
 		/*
-		
 			here
-
 		*/
         void pushf();
         void popf();
