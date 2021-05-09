@@ -1,4 +1,5 @@
 #include "node.h"
+#include <iostream>
 class Circular_linked_list
 {
     private:
@@ -58,5 +59,22 @@ class Circular_linked_list
         void pop(int data);
         void push_after(int new_data,int pa_data);
         void push_befor(int new_data,int pb_data);
-        void print();
+        void print()
+            {
+            if(current==nullptr)
+                std::cout<<"link-list is Empty\n" ;
+            else
+                {
+                  node * temp ;
+                  temp = this->current ;
+
+                  while(temp->getnext() != current )
+                      {
+                      std::cout << temp->getdata() ;
+
+                      temp  = temp->getnext()    ;
+                      }
+                  std::cout<<std::endl ;
+                }
+            }
 };
