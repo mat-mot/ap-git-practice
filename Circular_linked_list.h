@@ -10,10 +10,22 @@ public:
         this->current = nullptr ;
         this->size = 0 ;
     }
-    ~Circular_linked_list();
+    ~Circular_linked_list()
+    {
+        while ( this->size -- )
+        {
+            node * tmp = this->current ;
+            delete tmp ;
+            this->current = this->current->getnext() ;
+        }
+        this->size = 0 ;
+        this->current = nullptr ;
+    }
+    
     //add getter and setter functions here
     /*
             here
+
         */
     void pushf();
     void popf();
