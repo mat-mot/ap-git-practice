@@ -5,7 +5,11 @@ private:
     int size;
     node* current;
 public:
-    Circular_linked_list();
+    Circular_linked_list()
+    {
+        this->current = nullptr ;
+        this->size = 0 ;
+    }
     ~Circular_linked_list()
     {
         while ( this->size -- )
@@ -17,6 +21,7 @@ public:
         this->size = 0 ;
         this->current = nullptr ;
     }
+    
     //add getter and setter functions here
     /*
             here
