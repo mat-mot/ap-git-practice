@@ -1,8 +1,12 @@
 #include <iostream>
 using namespace std ;
-#include "Circular_linked_list.h"
-int main()
+void function ()
 {
 
+}
+int main()
+{
+    function () ;
     return 0 ;
 }
+//--------------https://github.com/mat-mot/ap-git-practice.git ----------------------

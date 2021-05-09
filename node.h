@@ -1,4 +1,4 @@
-//-----------------------------------------------------//writen by matin // https://github.com/mat-mot/ap-git-practice.git //993623038
+//----------------------------------------------------https://github.com/mat-mot/ap-git-practice.git
 class node
 {
 private:
@@ -37,4 +37,4 @@ public:
         return this->prev ;
     }
 };
-//------------------------------------------------------//writen by matin // https://github.com/mat-mot/ap-git-practice.git //993623038
+//---------------------------------------------------- https://github.com/mat-mot/ap-git-practice.git
