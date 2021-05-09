@@ -8,9 +8,22 @@ class Circular_linked_list
         Circular_linked_list();
         ~Circular_linked_list();
         //add getter and setter functions here
-        /*
-            here
-        */
+        int get_size()
+            {
+            return this->size    ;
+            }
+        node* get_current()
+            {
+            return this->current ;
+            }
+        void set_size(int size)
+            {
+            this->size =size ;
+            }
+        void set_current(node* current)
+            {
+            this->current =current ;
+            }
         void pushf();
         void popf();
         void pop(int data);
