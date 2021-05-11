@@ -63,8 +63,17 @@ public:
     }
     void popf()
     {
+        if ( this->current == nullptr )
+            return;
         node * tmp = this->current ;
         this->current = tmp->getnext() ;
+        if ( this->current == nullptr )
+        {
+            delete  tmp ;
+            tmp = nullptr ;
+            this->size -- ;
+            return;
+        }
         this->current->setprev(tmp->getprev()) ;
         tmp->getprev()->setnext(this->current) ;
         delete  tmp ;
