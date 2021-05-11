@@ -82,9 +82,10 @@ public:
         {
             node * temp ;
             temp = this->current ;
-            while(temp->getnext() != current )
+            int counter = this->size ;
+            while( counter-- )
             {
-                std::cout << temp->getdata() ;
+                std::cout << temp->getdata()<<" " ;
                 temp  = temp->getnext()    ;
             }
             std::cout<<std::endl ;
