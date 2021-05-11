@@ -80,7 +80,25 @@ public:
         tmp = nullptr ;
         this->size -- ;
     }
-    void pop(int data);
+    void pop(int data)
+    {
+    if(this->size==0)
+        return;
+    else
+        {
+        node * temp ;
+        node * temp_current =this->current ;
+
+        temp = this->current ;
+        while(temp->getdata() != data)
+            temp  = temp->getnext()    ;
+
+        this->current = temp ;
+        this->popf() ;
+        this->current =temp_current ;
+        }
+
+    }
     void push_after(int new_data,int pa_data);
     void push_befor(int new_data,int pb_data);
     void print()
