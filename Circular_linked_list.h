@@ -99,8 +99,32 @@ public:
         }
 
     }
-    void push_after(int new_data,int pa_data);
-    void push_befor(int new_data,int pb_data);
+    void push_after(int new_data,int pa_data)
+    {
+    node * temp ;
+    node * temp_current =this->current ;
+
+    temp =this->current ;
+    while(temp->getdata() != pa_data)
+        temp  = temp->getnext()    ;
+
+    this->current =temp         ;
+    this->pushf(new_data)       ;
+    this->current =temp_current ;
+    }
+    void push_befor(int new_data,int pb_data)
+    {
+    node * temp ;
+    node * temp_current =this->current ;
+
+    temp =this->current ;
+    while(temp->getdata() != pb_data)
+        temp  = temp->getprev()    ;
+
+    this->current =temp         ;
+    this->pushf(new_data)       ;
+    this->current =temp_current ;
+    }
     void print()
     {
         if(current==nullptr)
