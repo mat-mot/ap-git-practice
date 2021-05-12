@@ -1,3 +1,9 @@
+This project was done by 
+Ehsan mahmoudi && matin motmaen
+( 993613054 && 993623038 )
+on 12/may/2020 for AP practice
+repo : https://github.com/mat-mot/ap-git-practice.git
+
 //--------------https://github.com/mat-mot/ap-git-practice.git ----------------------
 #include <iostream>
 #include "Circular_linked_list.h"
@@ -143,5 +149,3 @@ void print_guide()
     cout << "\n\n\n" ;
 }
 
-
-//--------------https://github.com/mat-mot/ap-git-practice.git ----------------------
