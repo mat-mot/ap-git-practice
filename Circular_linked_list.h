@@ -89,6 +89,9 @@ public:
         if(this->size==0)
             return;
 
+        if( this->does_exist(data)== false)
+            return ;
+
         if(this->size==1)
         {
             delete  current ;
@@ -116,6 +119,9 @@ public:
     }
     void push_after(int new_data,int pa_data)
     {
+        if( this->does_exist(pa_data)== false)
+            return ;
+
         node * temp ;
         node * temp_current =this->current ;
 
@@ -129,6 +135,9 @@ public:
     }
     void push_befor(int new_data,int pb_data)
     {
+        if( this->does_exist(pb_data)== false)
+            return ;
+
         node * temp ;
         node * temp_current =this->current ;
 
@@ -157,5 +166,18 @@ public:
             }
             std::cout<<std::endl ;
         }
+    }
+    bool does_exist(int dat)
+    {
+    node * temp = this->current ;
+    temp=this->current ;
+    int counter = this->size ;
+    while( counter-- )
+        if(temp->getdata() == dat)
+            return true ;
+        else
+            temp=temp->getnext()  ;
+
+    return false ;
     }
 };
