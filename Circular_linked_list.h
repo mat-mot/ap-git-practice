@@ -1,10 +1,12 @@
 #include "node.h"
 #include <iostream>
+
+template<typename T>
 class Circular_linked_list
 {
 private:
     int size;
-    node* current;
+    node<T>* current;
 public:
 //constractor and destructive
     Circular_linked_list()
@@ -16,7 +18,7 @@ public:
     {
         while ( this->size -- )
         {
-            node * tmp = this->current ;
+            node<T> * tmp = this->current ;
             delete tmp ;
             this->current = this->current->getnext() ;
         }
@@ -28,7 +30,7 @@ public:
     {
         return this->size    ;
     }
-    node* get_current()
+    node<T>* get_current()
     {
         return this->current ;
     }
@@ -36,25 +38,25 @@ public:
     {
         this->size =size ;
     }
-    void set_current(node* current)
+    void set_current(node<T>* current)
     {
         this->current =current ;
     }
     //other funcs
-    void pushf(int data)
+    void pushf(T data)
     {
-        node* tmp ;
+        node<T>* tmp ;
         if(current ==nullptr)
         {
-            tmp=new node(data);
+            tmp=new node<T>(data);
             tmp->setnext(tmp) ;
             tmp->setprev(tmp) ;
             current = tmp ;
         }
         else
         {
-            node* tail =current->getprev();
-            tmp = new node(data,current,tail) ;
+            node<T>* tail =current->getprev();
+            tmp = new node<T>(data,current,tail) ;
             tail->setnext(tmp) ;
             current->setprev(tmp) ;
             current = tmp ;
@@ -66,7 +68,7 @@ public:
         if ( this->size == 0 )
             return;
 
-        node * tmp = this->current ;
+        node<T> * tmp = this->current ;
         this->current = tmp->getnext() ;
 
         if ( this->size == 1 )
@@ -84,7 +86,7 @@ public:
         }
         this->size -- ;
     }
-    void pop(int data)
+    void pop(T data)
     {
         if(this->size==0)
             return;
@@ -100,9 +102,9 @@ public:
         }
         else
         {
-            node * temp ;
-            node * temp_current =this->current ;
-            node * temp_current_next =this->current->getnext() ;
+            node<T> * temp ;
+            node<T> * temp_current =this->current ;
+            node<T> * temp_current_next =this->current->getnext() ;
             temp = this->current ;
             while(temp->getdata() != data)
                 temp  = temp->getnext()    ;
@@ -117,13 +119,13 @@ public:
         }
 
     }
-    void push_after(int new_data,int pa_data)
+    void push_after(T new_data,T pa_data)
     {
         if( this->does_exist(pa_data)== false)
             return ;
 
-        node * temp ;
-        node * temp_current =this->current ;
+        node<T> * temp ;
+        node<T> * temp_current =this->current ;
 
         temp =this->current ;
         while(temp->getprev()->getdata() != pa_data)
@@ -133,13 +135,13 @@ public:
         this->pushf(new_data)       ;
         this->current =temp_current ;
     }
-    void push_befor(int new_data,int pb_data)
+    void push_befor(T new_data,T pb_data)
     {
         if( this->does_exist(pb_data)== false)
             return ;
 
-        node * temp ;
-        node * temp_current =this->current ;
+        node<T> * temp ;
+        node<T> * temp_current =this->current ;
 
         temp =this->current ;
         while(temp->getdata() != pb_data)
@@ -156,7 +158,7 @@ public:
         else
         {
             std::cout<<"datas Are : " ;
-            node * temp ;
+            node<T> * temp ;
             temp = this->current ;
             int counter = this->size ;
             while( counter-- )
@@ -167,9 +169,9 @@ public:
             std::cout<<std::endl ;
         }
     }
-    bool does_exist(int dat)
+    bool does_exist(T dat)
     {
-    node * temp = this->current ;
+    node<T> * temp = this->current ;
     temp=this->current ;
     int counter = this->size ;
     while( counter-- )

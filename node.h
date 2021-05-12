@@ -1,22 +1,23 @@
 //----------------------------------------------------https://github.com/mat-mot/ap-git-practice.git
+template <typename T>
 class node
 {
 private:
-    int data;
+    T data;
     node* next;
     node* prev;
 public:
-    node (int d = 0 , node * n = nullptr , node * p = nullptr )
+    node (T d = 0 , node * n = nullptr , node * p = nullptr )
     {
         this->data = d ;
         this->next = n ;
         this->prev = p ;
     }
-    void setdata (int d )
+    void setdata (T d )
     {
         this->data = d ;
     }
-    int getdata ()
+    T getdata ()
     {
         return this->data ;
     }

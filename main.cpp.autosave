@@ -140,7 +140,7 @@ void print_guide()
           <<char (178)<<" exist       :  for checking hs a data exist                        "<<char (178) << endl  ;
     for ( int i=0 ; i < 70 ; i++ )
         cout <<char (178) ;
-    cout << "\n\n\n" ;
+    cout << "\n\n" ;
 }
 
 
