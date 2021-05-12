@@ -6,7 +6,7 @@ private:
     int size;
     node* current;
 public:
-    //constractor and destructive
+//constractor and destructive
     Circular_linked_list()
     {
         this->current = nullptr ;
@@ -23,7 +23,7 @@ public:
         this->size = 0 ;
         this->current = nullptr ;
     }
-    //getters
+//getters
     int get_size()
     {
         return this->size    ;
@@ -65,35 +65,50 @@ public:
     {
         if ( this->size == 0 )
             return;
+
         node * tmp = this->current ;
         this->current = tmp->getnext() ;
+
         if ( this->size == 1 )
         {
             delete  tmp ;
             tmp = nullptr ;
-            this->size -- ;
-            return;
+            this->current=nullptr ;
         }
+        else
+        {
         this->current->setprev(tmp->getprev()) ;
         tmp->getprev()->setnext(this->current) ;
         delete  tmp ;
         tmp = nullptr ;
+        }
         this->size -- ;
     }
     void pop(int data)
     {
         if(this->size==0)
             return;
+
+        if(this->size==1)
+        {
+            delete  current ;
+            this->current=nullptr ;
+            this->size = 0 ;
+        }
         else
         {
             node * temp ;
             node * temp_current =this->current ;
-
+            node * temp_current_next =this->current->getnext() ;
             temp = this->current ;
             while(temp->getdata() != data)
                 temp  = temp->getnext()    ;
 
+            if(temp==current)
+                temp_current=temp_current_next ;
+
             this->current = temp ;
+
             this->popf() ;
             this->current =temp_current ;
         }
@@ -105,7 +120,7 @@ public:
         node * temp_current =this->current ;
 
         temp =this->current ;
-        while(temp->getdata() != pa_data)
+        while(temp->getprev()->getdata() != pa_data)
             temp  = temp->getnext()    ;
 
         this->current =temp         ;
@@ -119,7 +134,7 @@ public:
 
         temp =this->current ;
         while(temp->getdata() != pb_data)
-            temp  = temp->getprev()    ;
+            temp  = temp->getnext()    ;
 
         this->current =temp         ;
         this->pushf(new_data)       ;
@@ -131,6 +146,7 @@ public:
             std::cout<<"link-list is Empty\n" ;
         else
         {
+            std::cout<<"datas Are : " ;
             node * temp ;
             temp = this->current ;
             int counter = this->size ;

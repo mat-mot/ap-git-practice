@@ -18,17 +18,18 @@ void function ()
     int dat1   ;
     int dat2   ;
 
-    ll.pushf(1) ;
+//    ll.pushf(1) ;
     ll.pushf(2) ;
-    ll.pushf(3) ;
+//    ll.pushf(3) ;
     ll.pushf(4) ;
-    ll.pushf(5) ;
+//    ll.pushf(5) ;
     ll.pushf(6) ;
+
     print_guide() ;
     while(true)
     {
         string order ;
-
+        ll.print() ;
         cout<<"what shoul i do ?  :  " ;
         cin>>order ;
 
@@ -54,7 +55,7 @@ void function ()
             cin>>dat1   ;
             cout<<"after which data you want this to be ? : " ;
             cin>>dat2   ;
-            ll.push_after(dat2,dat1) ;
+            ll.push_after(dat1,dat2) ;
         }
         else if(order=="pushb")
         {
@@ -62,13 +63,11 @@ void function ()
             cin>>dat1   ;
             cout<<"before which data you want this to be ? : " ;
             cin>>dat2  ;
-            ll.push_befor(dat2,dat1) ;
+            ll.push_befor(dat1,dat2) ;
         }
         else if(order=="print")
         {
-            cout<<"datas Are : " ;
             ll.print() ;
-            cout<<endl ;
         }
         else if(order=="finish")
         {
@@ -93,18 +92,18 @@ void print_guide()
     for ( int i=0 ; i < 70 ; i++ )
         cout <<char (178) ;
     cout << "\n" ;
-    cout<<char (178) << "                     |---------Guide---------|                      " <<char(178)<< "\n" ;
+    cout<<char (178) << "                  |------------Guide------------|                   " <<char(178)<< "\n" ;
     for ( int i=0 ; i < 70 ; i++ )
         cout <<char (178) ;
     cout << "\n" ;
     cout  <<char (178)<<" pushf       :  for adding data to the beginin                      " <<char (178) << endl
-         <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
-        <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
-       <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
-      <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
-     <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
-    <<char (178)<<" finish      :  stopping the program                                "<<char (178)<< endl
-    <<char (178)<<" clear       :  for clearing the console                            "<<char (178) << endl;
+          <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
+          <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
+          <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
+          <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
+          <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
+          <<char (178)<<" finish      :  stopping the program                                "<<char (178)<< endl
+          <<char (178)<<" clear       :  for clearing the console                            "<<char (178) << endl;
     for ( int i=0 ; i < 70 ; i++ )
         cout <<char (178) ;
     cout << "\n\n\n" ;
