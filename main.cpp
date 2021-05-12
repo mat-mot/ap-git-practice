@@ -90,13 +90,19 @@ void function ()
 //--------------https://github.com/mat-mot/ap-git-practice.git ----------------------
 void print_guide()
 {
-    cout<<char (178) << "|---------Guide---------|\n"
-       <<char (178)<<" pushf       :  for adding data to the beginin                      " <<char (178) << endl
-      <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
-     <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
-    <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
-    <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
-    <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
+    for ( int i=0 ; i < 70 ; i++ )
+        cout <<char (178) ;
+    cout << "\n" ;
+    cout<<char (178) << "                     |---------Guide---------|                      " <<char(178)<< "\n" ;
+    for ( int i=0 ; i < 70 ; i++ )
+        cout <<char (178) ;
+    cout << "\n" ;
+    cout  <<char (178)<<" pushf       :  for adding data to the beginin                      " <<char (178) << endl
+         <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
+        <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
+       <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
+      <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
+     <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
     <<char (178)<<" finish      :  stopping the program                                "<<char (178)<< endl
     <<char (178)<<" clear       :  for clearing the console                            "<<char (178) << endl;
     for ( int i=0 ; i < 70 ; i++ )
