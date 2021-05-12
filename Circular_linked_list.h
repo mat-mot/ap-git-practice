@@ -1,6 +1,5 @@
 #include "node.h"
 #include <iostream>
-
 template<typename T>
 class Circular_linked_list
 {
@@ -8,7 +7,7 @@ private:
     int size;
     node<T>* current;
 public:
-//constractor and destructive
+    //constractor and destructive
     Circular_linked_list()
     {
         this->current = nullptr ;
@@ -25,7 +24,7 @@ public:
         this->size = 0 ;
         this->current = nullptr ;
     }
-//getters
+    //getters
     int get_size()
     {
         return this->size    ;
@@ -66,8 +65,10 @@ public:
     void popf()
     {
         if ( this->size == 0 )
+        {
+            std :: cout << "there is not a data in list to delete that please order again !!! \n" ;
             return;
-
+        }
         node<T> * tmp = this->current ;
         this->current = tmp->getnext() ;
 
@@ -79,28 +80,30 @@ public:
         }
         else
         {
-        this->current->setprev(tmp->getprev()) ;
-        tmp->getprev()->setnext(this->current) ;
-        delete  tmp ;
-        tmp = nullptr ;
+            this->current->setprev(tmp->getprev()) ;
+            tmp->getprev()->setnext(this->current) ;
+            delete  tmp ;
+            tmp = nullptr ;
         }
         this->size -- ;
     }
     void pop(T data)
     {
-        if(this->size==0)
-            return;
-
+        //        if(this->size==0)
+        //            return;
         if( this->does_exist(data)== false)
-            return ;
-
-        if(this->size==1)
         {
-            delete  current ;
-            this->current=nullptr ;
-            this->size = 0 ;
+            std :: cout << "data isnt correct and does not exist !!" << std :: endl ;
+            return ;
         }
-        else
+        //        if(this->size==1)
+        //        {
+        //            delete  current ;
+        //            this->current=nullptr ;
+        //            this->size = 0 ;
+        //        }
+        //        else
+        if  (this->size >= 2 )
         {
             node<T> * temp ;
             node<T> * temp_current =this->current ;
@@ -108,21 +111,24 @@ public:
             temp = this->current ;
             while(temp->getdata() != data)
                 temp  = temp->getnext()    ;
-
             if(temp==current)
                 temp_current=temp_current_next ;
 
             this->current = temp ;
-
             this->popf() ;
             this->current =temp_current ;
         }
+        else
+            this->popf() ;
 
     }
     void push_after(T new_data,T pa_data)
     {
         if( this->does_exist(pa_data)== false)
+        {
+            std :: cout << "the data that you looking for isnt correctly type or does not exist !!" << std :: endl ;
             return ;
+        }
 
         node<T> * temp ;
         node<T> * temp_current =this->current ;
@@ -138,7 +144,10 @@ public:
     void push_befor(T new_data,T pb_data)
     {
         if( this->does_exist(pb_data)== false)
+        {
+            std :: cout << "the data that you looking for isnt correctly type or does not exist !!" << std :: endl ;
             return ;
+        }
 
         node<T> * temp ;
         node<T> * temp_current =this->current ;
@@ -171,15 +180,15 @@ public:
     }
     bool does_exist(T dat)
     {
-    node<T> * temp = this->current ;
-    temp=this->current ;
-    int counter = this->size ;
-    while( counter-- )
-        if(temp->getdata() == dat)
-            return true ;
-        else
-            temp=temp->getnext()  ;
+        node<T> * temp = this->current ;
+        temp=this->current ;
+        int counter = this->size ;
+        while( counter-- )
+            if(temp->getdata() == dat)
+                return true ;
+            else
+                temp=temp->getnext()  ;
 
-    return false ;
+        return false ;
     }
 };

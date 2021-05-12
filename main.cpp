@@ -1,8 +1,8 @@
-This project was done by 
-Ehsan mahmoudi && matin motmaen
-( 993613054 && 993623038 )
-on 12/may/2020 for AP practice
-repo : https://github.com/mat-mot/ap-git-practice.git
+//This project was done by
+//Ehsan mahmoudi && matin motmaen
+//( 993613054 && 993623038 )
+//on 12/may/2020 for AP practice
+//repo : https://github.com/mat-mot/ap-git-practice.git
 
 //--------------https://github.com/mat-mot/ap-git-practice.git ----------------------
 #include <iostream>
@@ -27,13 +27,13 @@ void function ()
     T dat1   ;
     T dat2   ;
 
-
+    system("cls") ;
     print_guide() ;
     while(true)
     {
         string order ;
-        ll.print() ;
-        cout<<"what shoul i do ?  :  " ;
+        //        ll.print() ;
+        cout<<"\nwhat should i do ?  :  " ;
         cin>>order ;
 
         if     (order=="pushf")
@@ -86,11 +86,11 @@ void function ()
         else if(order=="exist")
         {
             cout<<"what is the data you are looking for ? : " ;
-                  cin>>dat1 ;
+            cin>>dat1 ;
             if(ll.does_exist(dat1))
                 cout<<dat1<<" does exist \n" ;
             else
-                cout<<dat1<<"does not exist\n" ;
+                cout<<dat1<<" does not exist\n" ;
         }
         else
         {
@@ -101,28 +101,27 @@ void function ()
 //--------------https://github.com/mat-mot/ap-git-practice.git ----------------------
 void what_is_the_type()
 {
-string data_type ;
-    cout<<"what is the data type ?(char/double/float/int/string) : " ;
-    cin>>data_type ;
-
-while(true)
+    string data_type ;
+    while(true)
     {
-    if     (data_type=="char")
+        cout<<"what is the data type ?(char/double/float/int/string) : " ;
+        cin>>data_type ;
+        if     (data_type=="char")
             function<char>()  ;
-    else if(data_type=="double")
+        else if(data_type=="double")
             function<double>()  ;
-    else if(data_type=="float")
+        else if(data_type=="float")
             function<float>()  ;
-    else if(data_type=="int")
+        else if(data_type=="int")
             function<int>() ;
-    else if(data_type=="string")
+        else if(data_type=="string")
             function<string>()  ;
-    else
+        else
         {
-        cout<<"you did not enter a vaid data type\n" ;
-        continue ;
+            cout<<"you did not enter a vaid data type\n" ;
+            continue;
         }
-    break ;
+        break;
     }
 }
 
@@ -136,14 +135,14 @@ void print_guide()
         cout <<char (178) ;
     cout << "\n" ;
     cout  <<char (178)<<" pushf       :  for adding data to the beginin                      " <<char (178) << endl
-          <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
-          <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
-          <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
-          <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
-          <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
-          <<char (178)<<" finish      :  stopping the program                                "<<char (178)<< endl
-          <<char (178)<<" clear       :  for clearing the console                            "<<char (178) << endl
-          <<char (178)<<" exist       :  for checking hs a data exist                        "<<char (178) << endl  ;
+         <<char (178)<<" popf        :  for deleting the first data                         "<<char (178)<< endl
+        <<char (178)<<" pop         :  for deleting data                                   "<<char (178)<< endl
+       <<char (178)<<" pusha       :  for adding data after  an existing data             "<<char (178)<< endl
+      <<char (178)<<" pushb       :  for adding data before an existing data             "<<char (178)<< endl
+     <<char (178)<<" print       :  for printing data                                   "<<char (178)<< endl
+    <<char (178)<<" finish      :  stopping the program                                "<<char (178)<< endl
+    <<char (178)<<" clear       :  for clearing the console                            "<<char (178) << endl
+    <<char (178)<<" exist       :  for checking hs a data exist                        "<<char (178) << endl  ;
     for ( int i=0 ; i < 70 ; i++ )
         cout <<char (178) ;
     cout << "\n\n\n" ;
